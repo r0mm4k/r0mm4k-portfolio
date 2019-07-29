@@ -9,10 +9,9 @@ const Main = () => {
 				<div className={style.title}>
 					<span>Привет!</span>
 					<span>Меня зовут Рома Макаров.</span>
-					<span>Я Front-End разработчик</span>
+					<span>Я Front-End Developer</span>
 				</div>
 				<div className={style.photo}>
-
 				</div>
 			</div>
 		</main>
