@@ -1,0 +1,27 @@
+.footer {
+	min-height: 300px;
+	display: flex;
+	justify-content: center;
+	background-color: #91ff7c;
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-around;
+	width: 80%;
+	border: 1px solid;
+}
+
+.social {
+	width: 40%;
+	display: flex;
+	justify-content: space-between;
+}
+
+.item {
+	background-color: #8c9090;
+	width: 80px;
+	height: 80px;
+}
