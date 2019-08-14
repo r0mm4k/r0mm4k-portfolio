@@ -4,6 +4,7 @@ import style from './about.module.css';
 import TopBar from './top-bar/top-bar';
 import Skills from './skills/skills';
 import ProjectsMin from './projects-min/projects-min';
+import ButtonBar from '../button-bar/button-bar';
 
 const About = () => {
 
@@ -12,6 +13,7 @@ const About = () => {
 			<TopBar/>
 			<Skills/>
 			<ProjectsMin/>
+			<ButtonBar/>
 		</div>
 	);
 };

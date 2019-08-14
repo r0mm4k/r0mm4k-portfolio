@@ -12,7 +12,7 @@ const Skill = ({skill: {title = '', icon = '', items = []}}) => {
 			<div>
 				<ul className={style.items}>
 					{items.map((item, index) => <li key={index}><i className='fas fa-check icon-cog text-blue'
-																												 style={{color: 'Dodgerblue'}}/> {item}</li>)}
+																												 style={{color: '#41A4F5'}}/> {item}</li>)}
 				</ul>
 			</div>
 		</div>
