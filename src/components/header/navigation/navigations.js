@@ -27,8 +27,8 @@ const Navigation = ({nav = [], social = []}) => {
 				<div className={style.navLinks}>
 					{linksElements}
 				</div>
-				<div className={style.navMob} onClick={onClickNavBar}>
-					<i className='fas fa-bars fa-inverse fa-lg'/>
+				<div className={style.navMob}>
+					<i className='fas fa-bars fa-inverse fa-lg' onClick={onClickNavBar}/>
 				</div>
 			</div>
 			<div className={style.mob}>
