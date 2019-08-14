@@ -2,6 +2,7 @@
 	display: flex;
 	justify-content: space-between;
 	padding: 1rem;
+
 }
 
 .navLinks {
@@ -10,13 +11,17 @@
 	display: flex;
 	justify-content: space-around;
 	color: rgba(255,255,255,0.5);
+	margin-top: auto;
 }
 
-.navLinks a:hover {
+.navLinks a {
+}
+
+.navLinks a:hover, .mob a:hover {
 color: rgba(255,255,255,0.75);
 }
 
-.navLinks a.active {
+.navLinks a.active, .mob a.active {
 	color: #fff;
 }
 
@@ -35,4 +40,35 @@ color: rgba(255,255,255,0.75);
 
 .socials a:hover {
 	background: rgba(0, 0, 0, 0.2);
+}
+
+.navMob i {
+	vertical-align: middle;
+	cursor: pointer;
+}
+
+.mob {
+	padding-left: 1rem;
+	font-size: .875rem;
+	color: rgba(255,255,255,0.5);
+}
+
+.mob a{
+	display: block;
+	padding-bottom: 1rem;
+}
+
+@media (max-width: 767px) {
+	.navLinks {
+		display: none;
+	}
+}
+
+@media (min-width: 768px) {
+	.navMob {
+		display: none;
+	}
+	.mob {
+		display: none;
+	}
 }

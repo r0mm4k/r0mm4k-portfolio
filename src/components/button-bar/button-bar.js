@@ -19,7 +19,7 @@ const ButtonBar = () => {
 					</h3>
 					<div className={style.description}>
 						Ищешь опытного разработчика для создания своего веб-приложения? Чтобы начать общение,
-						просто напиши мне на электронную почту <a href='mailto:r0mmm4k@gmail.com'>r0mmm4k@gmail.com</a> или
+						просто напиши мне на почту <a href='mailto:r0mmm4k@gmail.com'>r0mmm4k@gmail.com</a> или
 						используй форму <Link to='/contacts'>на странице контактов</Link>.
 					</div>
 					<div className={style.btn}>

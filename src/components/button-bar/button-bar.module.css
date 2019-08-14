@@ -10,10 +10,6 @@
 	text-align: center;
 }
 
-.container {
-	max-width: 65%;
-}
-
 .avatar {
 	margin-bottom: 1rem;
 }
@@ -60,4 +56,22 @@
 	background: rgba(0, 0, 0, 0.4);
 	text-decoration: none;
 	color: white;
+}
+
+@media (min-width: 576px) {
+	.container {
+		max-width: 75%;
+	}
+}
+
+@media (min-width: 768px) {
+	.container {
+		max-width: 70%;
+	}
+}
+
+@media (min-width: 992px) {
+	.container {
+		max-width: 65%;
+	}
 }
