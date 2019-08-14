@@ -1,5 +1,38 @@
 .nav {
-	width: 360px;
 	display: flex;
 	justify-content: space-between;
+	padding: 1rem;
+}
+
+.navLinks {
+	font-size: .875rem;
+	width: 400px;
+	display: flex;
+	justify-content: space-around;
+	color: rgba(255,255,255,0.5);
+}
+
+.navLinks a:hover {
+color: rgba(255,255,255,0.75);
+}
+
+.navLinks a.active {
+	color: #fff;
+}
+
+.socials {
+}
+
+.socials a {
+	padding: 10px;
+	border-radius: 50%;
+	transition: all 0.4s ease-in-out;
+}
+
+.socials a:not(:last-child) {
+	margin-right: .8rem;
+}
+
+.socials a:hover {
+	background: rgba(0, 0, 0, 0.2);
 }

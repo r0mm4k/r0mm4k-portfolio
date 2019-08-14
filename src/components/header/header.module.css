@@ -1,14 +1,7 @@
-.header {
-	height: 60px;
-	background-color: #acfffa;
-	display: flex;
-	justify-content: center;
-}
-
-.container {
-	width: 80%;
-	border: 1px solid;
-	display: flex;
-	justify-content: flex-end;
-	align-items: center;
+.top-bar {
+	background-color: #0a71c6;
+	padding-right: 15px;
+	padding-left: 15px;
+	margin-right: auto;
+	margin-left: auto;
 }
