@@ -60,6 +60,7 @@
 		width: 75%;
 		margin-bottom: 4rem;
 		padding-bottom: 2rem;
+		min-height: 300px;
 	}
 
 	.skill:last-child {

@@ -18,7 +18,7 @@ const Skills = () => {
 			id: 1,
 			title: 'Back-End',
 			icon: '/assets/img/backend-icon.svg',
-			items: ['Node.js', 'Express/Hapi', 'MongoDB']
+			items: ['Node.js', 'Express/Hapi/Fastify', 'MongoDB', 'Swagger']
 		},
 		{
 			id: 2,
