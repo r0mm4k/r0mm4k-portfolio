@@ -55,7 +55,8 @@ color: rgba(255,255,255,0.75);
 
 .mob a{
 	display: block;
-	padding-bottom: 1rem;
+	padding-top: .5rem;
+	padding-bottom: .5rem;
 }
 
 @media (max-width: 767px) {
