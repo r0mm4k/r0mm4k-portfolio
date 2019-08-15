@@ -14,7 +14,7 @@ const ProjectsMin = () => {
 			title: 'GitHub Finder',
 			description: 'Веб-приложение для поиска профилей разработчиков и их репозиториев.',
 			development: 'Веб-приложение',
-			skills: ['React', 'ContextAPI', 'Hooks', 'HTML/CSS']
+			skills: ['React', 'Context', 'Hooks', 'HTML/CSS']
 		},
 		{
 			id: 2,
@@ -23,7 +23,7 @@ const ProjectsMin = () => {
 			title: 'Portfolio',
 			description: 'Порфтолию для веб-разработчика с примерами проектов, блогом, формой и резюме.',
 			development: 'Веб-приложение',
-			skills: ['React', 'ContextAPI', 'Hooks', 'HTML/CSS']
+			skills: ['React', 'Context', 'Hooks', 'HTML/CSS']
 		},
 		{
 			id: 3,
