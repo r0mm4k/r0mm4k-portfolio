@@ -28,21 +28,21 @@ const App = () => {
 		},
 		{
 			id: 2,
-			img: '/assets/img/projects/portfolio.jpg',
+			img: '/assets/img/projects/portfolio.png',
 			logo: 'Portfolio',
 			title: 'Portfolio',
 			link: 'portfolio',
-			description: 'Порфтолию для веб-разработчика с примерами проектов, блогом, формой и резюме.',
+			description: {small: 'Порфтолию для веб-разработчика с примерами проектов, блогом, формой и резюме.', full: ''},
 			development: 'Веб-приложение',
 			skills: ['React', 'Context', 'Hooks', 'HTML/CSS']
 		},
 		{
 			id: 3,
-			img: '/assets/img/projects/star-db.jpg',
+			img: '/assets/img/projects/star-db.png',
 			logo: 'StarDB',
 			title: 'StarDB',
 			link: 'stardb',
-			description: 'Веб-приложение для поиска героев, планет, кораблей фильма Star Wars.',
+			description: {small: 'Веб-приложение для поиска героев, планет, кораблей фильма Star Wars.', full: ''},
 			development: 'Веб-приложение',
 			skills: ['React', 'Redux', 'Bootstrap', 'HTML/CSS']
 		}
