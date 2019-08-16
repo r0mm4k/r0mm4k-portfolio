@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import style from './project-card.module.css';
 import { Link } from 'react-router-dom';
 
-const ProjectCard = ({project: {img = '', logo = '', title = '', link = '', description: {small}, development = '', skills = []}}) => {
+const ProjectCard = ({project: {img = '', logo = '', title = '', link = '', description: {small = ''}, development = '', skills = []}}) => {
 
 	const [overlay, setOverlay] = useState(true);
 	const [overlayDescription, setOverlayDescription] = useState(false);
@@ -26,7 +26,6 @@ const ProjectCard = ({project: {img = '', logo = '', title = '', link = '', desc
 						<span>{logo}</span>
 					</div>
 				</div>
-
 				<Link to={`/${link}`}>
 					<div className={overDescriptionStyle}>
 						<h5>
