@@ -22,6 +22,8 @@ const App = () => {
 			logo: 'GitHub Finder',
 			title: 'GitHub Finder',
 			link: 'github-finder',
+			liveurl: 'https://r0mm4k-finder.netlify.com',
+			codeurl: 'https://github.com/r0mmm4k/github-finder',
 			description: {small: 'Веб-приложение для поиска разработчиков и их репозиториев.', full: ''},
 			development: 'Веб-приложение',
 			skills: ['React', 'Context', 'Hooks', 'HTML/CSS']
@@ -32,6 +34,8 @@ const App = () => {
 			logo: 'Portfolio',
 			title: 'Portfolio',
 			link: 'portfolio',
+			liveurl: 'https://r0mm4k.com',
+			codeurl: 'https://github.com/r0mmm4k/r0mm4k-portfolio',
 			description: {small: 'Порфтолию для веб-разработчика с примерами проектов, блогом, формой и резюме.', full: ''},
 			development: 'Веб-приложение',
 			skills: ['React', 'Context', 'Hooks', 'HTML/CSS']
@@ -42,6 +46,8 @@ const App = () => {
 			logo: 'StarDB',
 			title: 'StarDB',
 			link: 'stardb',
+			liveurl: 'https://r0mm4k-starwars.netlify.com',
+			codeurl: 'https://github.com/r0mmm4k/star-wars',
 			description: {small: 'Веб-приложение для поиска героев, планет, кораблей фильма Star Wars.', full: ''},
 			development: 'Веб-приложение',
 			skills: ['React', 'Redux', 'Bootstrap', 'HTML/CSS']

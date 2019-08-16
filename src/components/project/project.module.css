@@ -53,6 +53,48 @@ text-align: center;
 .img img{
 	width: 100%;
 	object-fit: cover;
+	margin-bottom: 3rem
+}
+
+.btn a {
+	width: 100%;
+	margin-bottom: 1.5rem;
+	display: inline-block;
+	padding: .375rem 1rem;
+	color: #fff;
+	background-color: #41A4F5;
+	border-color: #41A4F5;
+	text-align: center;
+	vertical-align: middle;
+	border-radius: .25rem;
+	transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.btn a:hover {
+	text-decoration: none;
+	color: #fff;
+	background-color: #1d93f3;
+	border-color: #118df2;
+}
+
+.code a{
+	width: 100%;
+	display: inline-block;
+	padding: .375rem 1rem;
+	color: #fff;
+	background-color: #545b62;
+	border-color: #4e555b;
+	text-align: center;
+	vertical-align: middle;
+	border-radius: .25rem;
+	transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.code a:hover {
+	text-decoration: none;
+	color: #fff;
+	background-color: #5a6268;
+	border-color: #545b62;
 }
 
 @media (max-width: 1200px) {
