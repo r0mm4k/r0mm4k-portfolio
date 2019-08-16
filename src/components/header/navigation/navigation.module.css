@@ -34,8 +34,13 @@ color: rgba(255,255,255,0.75);
 	transition: all 0.4s ease-in-out;
 }
 
+.socials i {
+	text-align: center;
+	width: 1.1rem;
+}
+
 .socials a:not(:last-child) {
-	margin-right: .8rem;
+	margin-right: .7rem;
 }
 
 .socials a:hover {
@@ -51,6 +56,7 @@ color: rgba(255,255,255,0.75);
 	padding-left: 1rem;
 	font-size: .875rem;
 	color: rgba(255,255,255,0.5);
+	padding-bottom: 1.2rem;
 }
 
 .mob a{
@@ -58,6 +64,7 @@ color: rgba(255,255,255,0.75);
 	padding-top: .5rem;
 	padding-bottom: .5rem;
 }
+
 
 @media (max-width: 767px) {
 	.navLinks {

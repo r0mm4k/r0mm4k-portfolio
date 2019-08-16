@@ -32,7 +32,7 @@ const ProjectsMin = () => {
 			title: 'StarDB',
 			description: 'Веб-приложение для поиска героев, планет, кораблей сериала Star Wars.',
 			development: 'Веб-приложение',
-			skills: ['React', 'Redux', 'HOK', 'HTML/CSS']
+			skills: ['React', 'Redux', 'Bootstrap', 'HTML/CSS']
 		}
 	];
 

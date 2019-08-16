@@ -31,9 +31,9 @@ const Navigation = ({nav = [], social = []}) => {
 					<i className='fas fa-bars fa-inverse fa-lg' onClick={onClickNavBar}/>
 				</div>
 			</div>
-			<div className={style.mob}>
-				{navBar && navBarList}
-			</div>
+			{ navBar && (<div className={style.mob}>
+				{navBarList}
+			</div>)}
 		</nav>
 	);
 };
