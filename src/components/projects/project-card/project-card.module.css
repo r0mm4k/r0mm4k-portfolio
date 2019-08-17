@@ -9,8 +9,7 @@
 }
 
 .project h4 {
-	font-size: 1.15rem;
-	font-weight: 600;
+	font-size: 1.125rem;
 	text-align: center;
 	margin-top: 1.3rem;
 	margin-bottom: 1.3rem;
@@ -27,8 +26,8 @@
 	border-radius: 15rem;
 	color: #fff;
 	background-color: #58677c;
-	font-size: 72%;
-	font-weight: 600;
+	font-size: 75%;
+	font-weight: 700;
 	line-height: 1;
 	text-align: center;
 	white-space: nowrap;
