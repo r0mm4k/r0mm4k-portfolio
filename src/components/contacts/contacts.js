@@ -1,10 +1,27 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import style from './contacts.module.css';
 
 import { Link } from 'react-router-dom';
 
 const Contacts = () => {
+
+	const [state, setState] = useState({name: '', email: '', message: ''});
+	const {name, email, message} = state;
+
+	const handleSubmit = e => {
+		fetch("/", {
+			method: "POST",
+			headers: {"Content-Type": "application/x-www-form-urlencoded"},
+			body: encode({"form-name": "contact", ...state})
+		})
+			.then(() => alert("Success!"))
+			.catch(error => alert(error));
+
+		e.preventDefault();
+	};
+
+	const handleChange = e => setState({...state, [e.target.name]: e.target.value});
 
 	const avatar = '/assets/img/avatar.jpg';
 	const social = [
@@ -40,7 +57,28 @@ const Contacts = () => {
 						{socialsElements}
 					</div>
 				</div>
-				<ContactForm/>
+				<form className={style.form} name='contact' method='POST' onSubmit={handleSubmit}>
+					<input type='hidden' name='form-name' value='contact'/>
+					<h3>
+						Связаться
+					</h3>
+					<div className={style.formRow}>
+						<div className={style.inputs}>
+							<input type='text' className={style.formControl} name='name' value={name} onChange={handleChange}
+										 placeholder='Name' minLength='2' required/>
+							<input type='email' className={style.formControl} name='email' value={email} onChange={handleChange}
+										 placeholder='Email' required/>
+						</div>
+						<div className={style.textarea}>
+							<textarea className={style.formControl} name='message' value={message} onChange={handleChange}
+												placeholder='Enter your message' rows='10'
+												required/>
+						</div>
+						<div className={style.btn}>
+							<button type='submit'>Отправить</button>
+						</div>
+					</div>
+				</form>
 			</section>
 		</div>
 	);
@@ -57,7 +95,7 @@ const encode = (data) => {
 class ContactForm extends React.Component {
 	constructor(props) {
 		super(props);
-		this.state = { name: "", email: "", message: "" };
+		this.state = {name: "", email: "", message: ""};
 	}
 
 	/* Here’s the juicy bit for posting the form submission */
@@ -65,8 +103,8 @@ class ContactForm extends React.Component {
 	handleSubmit = e => {
 		fetch("/", {
 			method: "POST",
-			headers: { "Content-Type": "application/x-www-form-urlencoded" },
-			body: encode({ "form-name": "contact", ...this.state })
+			headers: {"Content-Type": "application/x-www-form-urlencoded"},
+			body: encode({"form-name": "contact", ...this.state})
 		})
 			.then(() => alert("Success!"))
 			.catch(error => alert(error));
@@ -74,29 +112,29 @@ class ContactForm extends React.Component {
 		e.preventDefault();
 	};
 
-	handleChange = e => this.setState({ [e.target.name]: e.target.value });
+	handleChange = e => this.setState({[e.target.name]: e.target.value});
 
 	render() {
-		const { name, email, message } = this.state;
+		const {name, email, message} = this.state;
 		return (
 			<form onSubmit={this.handleSubmit}>
 				<p>
 					<label>
-						Your Name: <input type="text" name="name" value={name} onChange={this.handleChange} />
+						Your Name: <input type='text' name='name' value={name} onChange={this.handleChange}/>
 					</label>
 				</p>
 				<p>
 					<label>
-						Your Email: <input type="email" name="email" value={email} onChange={this.handleChange} />
+						Your Email: <input type='email' name='email' value={email} onChange={this.handleChange}/>
 					</label>
 				</p>
 				<p>
 					<label>
-						Message: <textarea name="message" value={message} onChange={this.handleChange} />
+						Message: <textarea name='message' value={message} onChange={this.handleChange}/>
 					</label>
 				</p>
 				<p>
-					<button type="submit">Send</button>
+					<button type='submit'>Send</button>
 				</p>
 			</form>
 		);
