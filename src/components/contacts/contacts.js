@@ -1,4 +1,5 @@
 import React from 'react';
+import NetlifyForm from 'react-netlify-form';
 
 import style from './contacts.module.css';
 
@@ -40,25 +41,42 @@ const Contacts = () => {
 						{socialsElements}
 					</div>
 				</div>
-				<form className={style.form} name='contact' method='POST'>
-					<input type='hidden' name='form-name' value='contact'/>
-					<h3>
-						Связаться
-					</h3>
-					<div className={style.formRow}>
-						<div className={style.inputs}>
-							<input type='text' className={style.formControl} name='name' placeholder='Name' minLength='2' required/>
-							<input type='email' className={style.formControl} name='email' placeholder='Email' required/>
-						</div>
-						<div className={style.textarea}>
+				<NetlifyForm name='Contact Form'>
+					{({loading, error, success}) => (
+						<div>
+							{loading &&
+							<div>Loading...</div>
+							}
+							{error &&
+							<div>Your information was not sent. Please try again later.</div>
+							}
+							{success &&
+							<div>Thank you for contacting us!</div>
+							}
+							{!loading && !success &&
+							<div className={style.form}>
+								<h3>
+									Связаться
+								</h3>
+								<div className={style.formRow}>
+									<div className={style.inputs}>
+										<input type='text' className={style.formControl} name='name' placeholder='Name' minLength='2'
+													 required/>
+										<input type='email' className={style.formControl} name='email' placeholder='Email' required/>
+									</div>
+									<div className={style.textarea}>
 							<textarea className={style.formControl} name='message' placeholder='Enter your message' rows='10'
 												required/>
+									</div>
+									<div className={style.btn}>
+										<button type='submit'>Отправить</button>
+									</div>
+								</div>
+							</div>
+							}
 						</div>
-						<div className={style.btn}>
-							<button type='submit'>Отправить</button>
-						</div>
-					</div>
-				</form>
+					)}
+				</NetlifyForm>
 			</section>
 		</div>
 	);
