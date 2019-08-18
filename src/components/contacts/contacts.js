@@ -15,7 +15,10 @@ const Contacts = () => {
 			headers: {"Content-Type": "application/x-www-form-urlencoded"},
 			body: encode({"form-name": "contact", ...state})
 		})
-			.then(() => alert("Success!"))
+			.then(() => {
+				alert("Success!");
+				setState({name: '', email: '', message: ''});
+			})
 			.catch(error => alert(error));
 
 		e.preventDefault();
