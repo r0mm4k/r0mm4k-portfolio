@@ -1,5 +1,4 @@
 import React from 'react';
-import NetlifyForm from 'react-netlify-form';
 
 import style from './contacts.module.css';
 
@@ -41,45 +40,65 @@ const Contacts = () => {
 						{socialsElements}
 					</div>
 				</div>
-				<NetlifyForm name='Contact Form'>
-					{({loading, error, success}) => (
-						<div>
-							{loading &&
-							<div>Loading...</div>
-							}
-							{error &&
-							<div>Your information was not sent. Please try again later.</div>
-							}
-							{success &&
-							<div>Thank you for contacting us!</div>
-							}
-							{!loading && !success &&
-							<div className={style.form}>
-								<h3>
-									Связаться
-								</h3>
-								<div className={style.formRow}>
-									<div className={style.inputs}>
-										<input type='text' className={style.formControl} name='name' placeholder='Name' minLength='2'
-													 required/>
-										<input type='email' className={style.formControl} name='email' placeholder='Email' required/>
-									</div>
-									<div className={style.textarea}>
-							<textarea className={style.formControl} name='message' placeholder='Enter your message' rows='10'
-												required/>
-									</div>
-									<div className={style.btn}>
-										<button type='submit'>Отправить</button>
-									</div>
-								</div>
-							</div>
-							}
-						</div>
-					)}
-				</NetlifyForm>
+				<ContactForm/>
 			</section>
 		</div>
 	);
 };
 
 export default Contacts;
+
+const encode = (data) => {
+	return Object.keys(data)
+		.map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+		.join("&");
+};
+
+class ContactForm extends React.Component {
+	constructor(props) {
+		super(props);
+		this.state = { name: "", email: "", message: "" };
+	}
+
+	/* Here’s the juicy bit for posting the form submission */
+
+	handleSubmit = e => {
+		fetch("/", {
+			method: "POST",
+			headers: { "Content-Type": "application/x-www-form-urlencoded" },
+			body: encode({ "form-name": "contact", ...this.state })
+		})
+			.then(() => alert("Success!"))
+			.catch(error => alert(error));
+
+		e.preventDefault();
+	};
+
+	handleChange = e => this.setState({ [e.target.name]: e.target.value });
+
+	render() {
+		const { name, email, message } = this.state;
+		return (
+			<form onSubmit={this.handleSubmit}>
+				<p>
+					<label>
+						Your Name: <input type="text" name="name" value={name} onChange={this.handleChange} />
+					</label>
+				</p>
+				<p>
+					<label>
+						Your Email: <input type="email" name="email" value={email} onChange={this.handleChange} />
+					</label>
+				</p>
+				<p>
+					<label>
+						Message: <textarea name="message" value={message} onChange={this.handleChange} />
+					</label>
+				</p>
+				<p>
+					<button type="submit">Send</button>
+				</p>
+			</form>
+		);
+	}
+}
