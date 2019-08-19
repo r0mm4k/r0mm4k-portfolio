@@ -31,7 +31,7 @@
 	font-weight: 600;
 }
 
-.cardsBlock {
+.container {
 	width: 85%;
 	display: flex;
 	justify-content: space-between;
@@ -116,7 +116,7 @@ text-align: center;
 }
 
 @media (max-width: 820px) {
-	.cardsBlock {
+	.container {
 		width: 100%;
 		flex-direction: column;
 		text-align: center;
@@ -130,7 +130,7 @@ text-align: center;
 }
 
 @media (max-width: 595px) {
-	.cardsBlock {
+	.container {
 		width: 100%;
 	}
 
