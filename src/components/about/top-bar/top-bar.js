@@ -5,7 +5,7 @@ import style from './top-bar.module.css';
 
 const TopBar = () => {
 
-	const avatar = '/assets/img/avatar.jpg';
+	const avatar = '/assets/img/avatar.webp';
 
 	return (
 		<div className={style.topBar}>
