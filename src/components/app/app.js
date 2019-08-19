@@ -60,7 +60,7 @@ const App = () => {
 				<Header/>
 				<Switch>
 					<Route exact path='/' render={() => <About projects={projects}/>}/>
-					<Route exact path='/projects' render={() => <Projects/>}/>
+					<Route exact path='/projects' render={() => <Projects projects={projects}/>}/>
 					<Route exact path='/blog' render={() => <Blog/>}/>
 					<Route exact path='/resume' render={() => <Resume/>}/>
 					<Route exact path='/contacts' render={() => <Contacts/>}/>

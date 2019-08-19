@@ -2,24 +2,23 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	padding: 3rem 1.5rem;
+	padding: 3rem 15px;
 	margin-right: auto;
 	margin-left: auto;
 }
 
 .skills h3 {
-	font-weight: 600;
+	font-size: 1.75rem;
+	font-weight: 700;
 	text-align: center;
 	margin-bottom: 1rem;
 }
 
 .description {
 	color: #58677c;
-	width: 90%;
 	text-align: center;
-	margin-bottom: 3rem;
-	margin-left: 2rem;
-	margin-right: 2rem;
+	margin-bottom: 2.5rem;
+	max-width: 780px;
 }
 
 .description a:hover {
@@ -27,17 +26,40 @@
 	text-decoration: underline;
 }
 
-.container {
+.cardsBlock {
 	width: 100%;
 	display: flex;
 	justify-content: center;
 	padding-top: 3rem;
 }
 
+@media (min-width: 576px) {
+	.skills {
+		max-width: 540px;
+	}
+}
+
+@media (min-width: 768px) {
+	.skills {
+		max-width: 730px;
+	}
+}
+
+@media (min-width: 992px) {
+	.skills {
+		max-width: 960px;
+	}
+}
+
+@media (min-width: 1200px) {
+	.skills {
+		max-width: 1160px;
+	}
+}
+
 @media (max-width: 994px) {
-	.container {
+	.cardsBlock {
 		width: 100%;
-		display: flex;
 		flex-direction: column;
 		align-items: center;
 		padding-top: 3rem;

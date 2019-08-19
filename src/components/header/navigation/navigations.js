@@ -1,39 +1,36 @@
-import React, {useState} from 'react';
-
-import style from './navigation.module.css';
+import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 
+import style from './navigation.module.css';
+
 const Navigation = ({nav = [], social = []}) => {
-	const [navBar,setNavBar] = useState(false);
 
-	const onClickNavBar = () => {
-		setNavBar(!navBar);
-		console.log(navBar);
-	};
+	const [mobNav, setMobNav] = useState(false);
 
-	const linksElements = nav.map(({link = '', label = ''}, index) => (
+	const onClickNavBar = () => setMobNav(!mobNav);
+
+	const navItems = nav.map(({link = '', label = ''}, index) => (
 		<NavLink key={index} exact to={link} activeClassName={style.active}>{label}</NavLink>));
-	const socialsElements = social.map(({icon = '', link = ''}, index) => (
+	const socialItems = social.map(({icon = '', link = ''}, index) => (
 		<a key={index} href={link}><i className={icon}/></a>));
-	const navBarList = nav.map(({link = '', label = ''}, index) => (
+	const mobNavElements = nav.map(({link = '', label = ''}, index) => (
 		<NavLink key={index} exact to={link} onClick={onClickNavBar} activeClassName={style.active}>{label}</NavLink>));
+	const mobItems = mobNav && (<div className={style.mobItems}>{mobNavElements}</div>);
 
 	return (
-		<nav className={style.navAll}>
-			<div className={style.nav}>
-				<div className={style.socials}>
-					{socialsElements}
+		<nav className={style.nav}>
+			<div className={style.desktopNav}>
+				<div className={style.socialItems}>
+					{socialItems}
 				</div>
-				<div className={style.navLinks}>
-					{linksElements}
+				<div className={style.navItems}>
+					{navItems}
 				</div>
-				<div className={style.navMob}>
+				<div className={`${style.mobNavIcon} ${mobNav && style.rotate}`}>
 					<i className='fas fa-bars fa-inverse fa-lg' onClick={onClickNavBar}/>
 				</div>
 			</div>
-			{ navBar && (<div className={style.mob}>
-				{navBarList}
-			</div>)}
+			{mobItems}
 		</nav>
 	);
 };

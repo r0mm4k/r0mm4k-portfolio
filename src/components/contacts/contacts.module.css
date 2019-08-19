@@ -98,11 +98,11 @@
 
 
 .linkedin {
-	background-color: #0077B5;
+	background-color: #02B875;
 }
 
 .linkedin:hover {
-	background-color: #005582;
+	background-color: #018655;
 }
 
 .github {
@@ -114,27 +114,27 @@
 }
 
 .vk {
-	background-color: #1DA1F2;
+	background-color: #4a739a;;
 }
 
 .vk:hover {
-	background-color: #0c85d0;
+	background-color: #3a5b7a;;
 }
 
 .telegram {
-	background-color: #F3A83B;
+	background-color: #009fda;;
 }
 
 .telegram:hover {
-	background-color: #ed920e;
+	background-color: #007ba8;;
 }
 
 .instagram {
-	background-color: #02B875;
+	background-color: #f54952;;
 }
 
 .instagram:hover {
-	background-color: #018655;
+	background-color: #c53b42;;
 }
 
 .form {
@@ -226,6 +226,21 @@ textarea.formControl {
 @media (max-width: 992px) {
 	.card {
 		padding: 2.5rem;
+	}
+}
+
+@media (max-width: 768px) {
+	.card {
+		padding: 2rem;
+	}
+	.inputs {
+		display: block;
+	}
+	.inputs input {
+		margin-top: 10px;
+	}
+	.textarea {
+		width: 100%;
 	}
 }
 

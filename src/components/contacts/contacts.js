@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 import style from './contacts.module.css';
-
-import { Link } from 'react-router-dom';
 
 const Contacts = () => {
 
@@ -16,8 +15,8 @@ const Contacts = () => {
 			body: encode({"form-name": "contact", ...state})
 		})
 			.then(() => {
-				alert("Success!");
 				setState({name: '', email: '', message: ''});
+				alert("Success!");
 			})
 			.catch(error => alert(error));
 

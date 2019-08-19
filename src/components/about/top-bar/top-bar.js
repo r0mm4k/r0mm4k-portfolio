@@ -1,7 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import style from './top-bar.module.css';
-import { Link } from 'react-router-dom';
 
 const TopBar = () => {
 
@@ -14,17 +14,17 @@ const TopBar = () => {
 					<img src={avatar} alt='avatar'/>
 				</div>
 				<div className={style.text}>
-					<div className={style.lead}>
+					<div className={style.hello}>
 						Привет, меня зовут
 					</div>
-					<h2 className={style.name}>
+					<h1 className={style.name}>
 						Рома Макаров
-					</h2>
+					</h1>
 					<div className={style.description}>
-						Я web-developer, специализирующийся на front-end разработке и разработке SPA приложений.
-						Я пишу о веб-разработке в своем <Link to='/blog'>блоге</Link>. Хочешь узнать, как я могу помочь твоему
-						проекту?
-						Смотри мои <Link to='/projects'>работы</Link> и изучай моё <Link to='/resume'>резюме</Link>.
+						Я web-developer, специализирующийся на front-end, back-end разработке и разработке одностраничных
+						приложений (SPA). Я пишу о веб-разработке в своем <Link to='/blog'>блоге</Link>. Хочешь узнать,
+						как я могу помочь твоему проекту? Смотри мои <Link to='/projects'>работы</Link> и
+						изучай моё <Link to='/resume'>резюме</Link>.
 					</div>
 					<div className={style.btn}>
 						<Link to='/contacts'>Нанять Меня</Link>

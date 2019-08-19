@@ -1,6 +1,7 @@
 import React from 'react';
 
 import style from './header.module.css';
+
 import Navigation from './navigation/navigations';
 
 const Header = () => {
@@ -21,7 +22,7 @@ const Header = () => {
 	];
 
 	return (
-		<div className={style['top-bar']}>
+		<div className={style.header}>
 			<Navigation nav={nav} social={social}/>
 		</div>
 	);

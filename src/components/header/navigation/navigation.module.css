@@ -1,11 +1,29 @@
-.nav {
+.desktopNav {
 	display: flex;
 	justify-content: space-between;
 	padding: 1rem;
-
 }
 
-.navLinks {
+.socialItems a {
+	padding: 10px;
+	border-radius: 50%;
+	transition: all 0.4s ease-in-out;
+}
+
+.socialItems i {
+	text-align: center;
+	width: 1.1rem;
+}
+
+.socialItems a:not(:last-child) {
+	margin-right: .7rem;
+}
+
+.socialItems a:hover {
+	background: rgba(0, 0, 0, 0.2);
+}
+
+.navItems {
 	font-size: .875rem;
 	width: 400px;
 	display: flex;
@@ -13,53 +31,39 @@
 	margin-top: auto;
 }
 
-.navLinks a {
+.navItems a, .mobItems a {
 	color: rgba(255, 255, 255, 0.5);
 }
 
-.navLinks a:hover, .mob a:hover {
+.navItems a:hover, .mobItems a:hover {
 	color: rgba(255, 255, 255, 0.75);
 }
 
-.navLinks a.active, .mob a.active {
+.navItems a.active, .mobItems a.active {
 	color: #fff;
 }
 
-.socials {
+.mobNavIcon {
+	transition: all 0.3s ease-in-out;
 }
 
-.socials a {
-	padding: 10px;
-	border-radius: 50%;
-	transition: all 0.4s ease-in-out;
-}
-
-.socials i {
-	text-align: center;
-	width: 1.1rem;
-}
-
-.socials a:not(:last-child) {
-	margin-right: .7rem;
-}
-
-.socials a:hover {
-	background: rgba(0, 0, 0, 0.2);
-}
-
-.navMob i {
+.mobNavIcon i {
 	vertical-align: middle;
 	cursor: pointer;
 }
 
-.mob {
+.rotate {
+	transform: rotate(90deg);
+}
+
+.mobItems {
 	padding-left: 1rem;
 	font-size: .875rem;
 	color: rgba(255, 255, 255, 0.5);
 	padding-bottom: 1.2rem;
 }
 
-.mob a {
+.mobItems a {
 	display: block;
 	padding-top: .5rem;
 	padding-bottom: .5rem;
@@ -67,17 +71,17 @@
 
 
 @media (max-width: 767px) {
-	.navLinks {
+	.navItems {
 		display: none;
 	}
 }
 
 @media (min-width: 768px) {
-	.navMob {
+	.mobNavIcon {
 		display: none;
 	}
 
-	.mob {
+	.mobItems {
 		display: none;
 	}
 }

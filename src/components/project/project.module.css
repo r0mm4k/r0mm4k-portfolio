@@ -31,7 +31,7 @@
 	font-weight: 600;
 }
 
-.container {
+.cardsBlock {
 	width: 85%;
 	display: flex;
 	justify-content: space-between;
@@ -82,8 +82,8 @@ text-align: center;
 	display: inline-block;
 	padding: .375rem 1rem;
 	color: #fff;
-	background-color: #545b62;
-	border-color: #4e555b;
+	background-color: #58677c;
+	border-color: #58677c;
 	text-align: center;
 	vertical-align: middle;
 	border-radius: .25rem;
@@ -116,7 +116,7 @@ text-align: center;
 }
 
 @media (max-width: 820px) {
-	.container {
+	.cardsBlock {
 		width: 100%;
 		flex-direction: column;
 		text-align: center;
@@ -130,7 +130,7 @@ text-align: center;
 }
 
 @media (max-width: 595px) {
-	.container {
+	.cardsBlock {
 		width: 100%;
 	}
 

@@ -1,9 +1,9 @@
 import React from 'react';
-
-import style from './button-bar.module.css';
 import { Link } from 'react-router-dom';
 
-const ButtonBar = () => {
+import style from './bottom-bar.module.css';
+
+const BottomBar = () => {
 
 	const avatar = '/assets/img/avatar.jpg';
 
@@ -31,4 +31,4 @@ const ButtonBar = () => {
 	);
 };
 
-export default ButtonBar;
+export default BottomBar;

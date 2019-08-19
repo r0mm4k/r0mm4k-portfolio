@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import Skill from './skill/skill'
-
 import style from './skills.module.css';
+
+import Skill from './skill/skill'
 
 const Skills = () => {
 
@@ -12,7 +12,7 @@ const Skills = () => {
 			id: 0,
 			title: 'Front-End',
 			icon: '/assets/img/frontend-icon.svg',
-			items: ['React/Redux', 'JavaScript (ES6+AJAX)', 'Webpack', 'yarn/npm (+scripts)', 'HTML/CSS (S.C. + Module)']
+			items: ['React/Redux', 'JavaScript (ES6+AJAX)', 'Bootstrap', 'yarn/npm (+scripts)', 'HTML/CSS (S.C. + Module)']
 		},
 		{
 			id: 1,
@@ -24,7 +24,7 @@ const Skills = () => {
 			id: 2,
 			title: 'Other',
 			icon: '/assets/img/other-skills-icon.svg',
-			items: ['GIT (GitHub, Bitbucket)', 'Sketch/Figma', 'WordPress/OpenCart']
+			items: ['GIT (GitHub, Bitbucket)', 'HTTP/HTTPS', 'Sketch/Figma', 'WordPress/OpenCart']
 		}
 	];
 
@@ -34,11 +34,11 @@ const Skills = () => {
 				Навыки
 			</h3>
 			<div className={style.description}>
-				У меня около года опыта в создании многофункциональных веб-приложений. Ниже приведен краткий обзор моих
-				основных технических навыков и инструментов, которые я использую. Хочешь узнать больше о моем опыте?
+				Интересен мой опыт в создании многофункциональных веб-приложений? Ниже представлен краткий обзор моих
+				основных технических навыков и инструментов, которыми я пользуюсь. Хочешь узнать больше?
 				Посмотри моё<Link to='/resume'> онлайн-резюме</Link>.
 			</div>
-			<div className={style.container}>
+			<div className={style.cardsBlock}>
 				{skills.map(({id, ...skill}) => <Skill key={id} skill={skill}/>)}
 			</div>
 		</div>

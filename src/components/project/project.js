@@ -29,7 +29,7 @@ const Project = ({projects, match}) => {
 					<a target='_blank' rel='noopener noreferrer' href={liveurl}><i className='far fa-caret-square-right' /> View Live Site</a>
 				</div>
 				<div className={style.code}>
-					<a target='_blank' rel='noopener noreferrer' href={codeurl}><i className='fab fa-codepen' /> View Code</a>
+					<a target='_blank' rel='noopener noreferrer' href={codeurl}><i className='fab fa-github' /> View Code</a>
 				</div>
 			</section>
 		</div>

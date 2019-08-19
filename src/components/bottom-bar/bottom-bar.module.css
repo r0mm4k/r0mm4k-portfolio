@@ -1,6 +1,10 @@
 .buttonBar {
 	background-color: #41A4F5;
 	color: #fff;
+}
+
+.container {
+	width: 100%;
 	padding: 3rem 1.5rem;
 	margin-right: auto;
 	margin-left: auto;
@@ -11,7 +15,7 @@
 }
 
 .avatar {
-	margin-bottom: 1rem;
+	margin-bottom: .5rem;
 }
 
 .avatar img {
@@ -21,14 +25,14 @@
 }
 
 .title {
-	font-size: 1.55rem;
+	font-size: 1.75rem;
 	font-weight: 700;
 	margin-bottom: .5rem;
 }
 
 .description {
-	font-size: 1.05rem;
-	margin-bottom: 1.4rem;
+	margin-bottom: 1rem;
+	max-width: 780px;
 }
 
 .description a {
@@ -60,19 +64,31 @@
 }
 
 @media (min-width: 576px) {
-	.container {
-		max-width: 75%;
+	.skills {
+		max-width: 540px;
 	}
 }
 
 @media (min-width: 768px) {
-	.container {
-		max-width: 70%;
+	.skills {
+		max-width: 730px;
 	}
 }
 
 @media (min-width: 992px) {
-	.container {
-		max-width: 65%;
+	.skills {
+		max-width: 960px;
+	}
+}
+
+@media (min-width: 1200px) {
+	.skills {
+		max-width: 1160px;
+	}
+}
+
+@media (max-width: 994px) {
+	.cardsBlock {
+		width: 100%;
 	}
 }
