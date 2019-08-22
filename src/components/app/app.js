@@ -60,7 +60,7 @@ const App = () => {
 			link: 'todo-list',
 			liveurl: 'https://todo-r0mm4k.netlify.com',
 			codeurl: 'https://github.com/r0mmm4k/todo-list',
-			description: {small: 'Веб-приложение для хранениея списка заданий.', full: ''},
+			description: {small: 'Веб-приложение для хранения списка заданий.', full: ''},
 			development: 'Веб-приложение',
 			skills: ['React', 'Redux', 'Bootstrap', 'HTML/CSS']
 		}
