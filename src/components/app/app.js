@@ -51,6 +51,18 @@ const App = () => {
 			description: {small: 'Веб-приложение для поиска героев, планет, кораблей фильма Star Wars.', full: ''},
 			development: 'Веб-приложение',
 			skills: ['React', 'Redux', 'Bootstrap', 'HTML/CSS']
+		},
+		{
+			id: 4,
+			img: '/assets/img/projects/todo-list.png',
+			logo: 'ToDo List',
+			title: 'ToDo List',
+			link: 'todo-list',
+			liveurl: 'https://todo-r0mm4k.netlify.com',
+			codeurl: 'https://github.com/r0mmm4k/todo-list',
+			description: {small: 'Веб-приложение для хранениея списка заданий.', full: ''},
+			development: 'Веб-приложение',
+			skills: ['React', 'Redux', 'Bootstrap', 'HTML/CSS']
 		}
 	];
 
