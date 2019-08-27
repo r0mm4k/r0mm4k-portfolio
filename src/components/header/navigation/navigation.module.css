@@ -50,6 +50,8 @@
 .mobNavIcon i {
 	vertical-align: middle;
 	cursor: pointer;
+	font-size: 1.35rem;
+	margin-top: -.2rem;
 }
 
 .rotate {
