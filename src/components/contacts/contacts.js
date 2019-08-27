@@ -45,7 +45,9 @@ const Contacts = () => {
 	return (
 		<div className={style.contacts}>
 			<div className={style.header}>
-				<h2>Контакты</h2>
+				<div className={style.container}>
+					<h2>Контакты</h2>
+				</div>
 			</div>
 			<section className={style.section}>
 				<div className={style.avatar}>
