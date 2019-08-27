@@ -41,6 +41,7 @@
 
 .navItems a.active, .mobItems a.active {
 	color: #fff;
+	font-weight: 600;
 }
 
 .mobNavIcon {
