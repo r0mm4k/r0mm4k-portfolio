@@ -63,6 +63,18 @@ const App = () => {
 			description: {small: 'Веб-приложение для хранения списка заданий.', full: ''},
 			development: 'Веб-приложение',
 			skills: ['React', 'Redux', 'Bootstrap', 'HTML/CSS']
+		},
+		{
+			id: 5,
+			img: '/assets/img/projects/confusion.png',
+			logo: 'Confusion',
+			title: 'Confusion',
+			link: 'confusion',
+			liveurl: 'https://r0mm4k-confusion.netlify.com',
+			codeurl: 'https://github.com/r0mmm4k/confusion',
+			description: {small: 'Веб-сайт для ресторана.', full: ''},
+			development: 'Веб-сайт',
+			skills: ['React', 'Redux', 'Bootstrap', 'HTML/CSS']
 		}
 	];
 
