@@ -19,7 +19,7 @@ const Resume = () => {
 				<div className={style.container}>
 					<h2>Резюме</h2>
 					<div className={style.btn}>
-						<a target='_blank' rel='noopener noreferrer' href='/'>
+						<a target='_blank' rel='noopener noreferrer' href='/assets/pdf/cv_roma_makarov.pdf'>
 							<i className='fa fa-download  fa-inverse'/>
 							Скачать PDF-версию
 						</a>
