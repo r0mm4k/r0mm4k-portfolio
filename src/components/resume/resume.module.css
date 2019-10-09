@@ -121,6 +121,10 @@
 	font-size: 1rem;
 }
 
+.sectionContent {
+	color: #58677c;
+}
+
 .body {
 	padding: 3rem;
 }
@@ -151,25 +155,236 @@
 .row {
 	display: flex;
 	flex-wrap: wrap;
+	margin-right: -15px;
+	margin-left: -15px;
 }
 
 .left {
-	-webkit-box-flex: 0;
-	-webkit-flex: 0 0 75%;
-	flex: 0 0 75%;
-	max-width: 75%;
 	position: relative;
 	width: 100%;
 	padding-right: 15px;
+	padding-left: 15px;
 }
 
 .right {
-	-webkit-box-flex: 0;
-	-webkit-flex: 0 0 25%;
-	flex: 0 0 25%;
-	max-width: 25%;
+	position: relative;
 	width: 100%;
+	padding-right: 15px;
 	padding-left: 15px;
+}
+
+.timeline {
+	padding-left: 2rem;
+	position: relative !important;
+}
+
+.timeline:before {
+	content: "";
+	display: inline-block;
+	width: 3px;
+	height: 100%;
+	background: #c8cfd8;
+	left: 6px;
+	top: 4px;
+	position: absolute;
+}
+
+.timelineItem {
+	padding-bottom: 3rem;
+	position: relative;
+}
+
+.timelineItem:before {
+	content: "";
+	display: inline-block;
+	position: absolute;
+	left: -32px;
+	top: 3px;
+	width: 15px;
+	height: 15px;
+	border: 4px solid #6f8098;
+	background: white;
+	border-radius: 50%;
+}
+
+.itemHeader {
+	margin-bottom: .5rem;
+}
+
+.rowHeader {
+	display: flex;
+}
+
+.rowHeader h3 {
+	font-size: 1.125rem;
+	color: #434E5E;
+	font-weight: 700;
+	margin-bottom: .25rem;
+}
+
+.informer {
+	font-size: 0.75rem;
+	color: #8d9aad;
+	font-weight: 400;
+	vertical-align: text-top;
+}
+
+.rowHeader div {
+	color: #58677c;
+	font-size: 0.8rem;
+	font-weight: 600;
+	margin-left: auto;
+}
+
+.positionTime {
+	font-size: 0.875rem;
+	color: #aab4c3;
+}
+
+.projects p {
+	margin-top: 0;
+	margin-bottom: .5rem;
+}
+
+.projects {
+	margin-left: 1rem;
+}
+
+.projects h4 {
+	font-size: 1rem;
+	font-weight: 700;
+	margin-bottom: .4rem;
+}
+
+.projectSkill {
+	padding-left: 0;
+	list-style: none;
+	margin-top: 0;
+	margin-bottom: 1.5rem;
+}
+
+.projectSkill li {
+	display: inline-block;
+}
+
+.projectSkill li:not(:last-child) {
+	margin-right: .5rem;
+}
+
+.projectSkill span {
+	padding: 0.35em 0.7em 0.4em 0.7em;
+	color: #fff;
+	background-color: #58677c;
+	border-radius: 10rem;
+	display: inline-block;
+	font-size: 70%;
+	font-weight: 700;
+	line-height: 1;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: baseline;
+	transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.listEducation {
+	padding-left: 0;
+	list-style: none;
+	margin-top: 0;
+	margin-bottom: 1rem;
+}
+
+.listEducation li {
+	margin-bottom: .5rem;
+}
+
+.listEducation .education {
+	color: #434E5E;
+	font-weight: 700;
+}
+
+.listEducation .college {
+	font-size: 0.875rem;
+}
+
+.listEducation .date {
+	color: #aab4c3;
+	font-size: 0.875rem;
+}
+
+.skillItem h4 {
+	font-size: 1rem;
+	color: #434E5E;
+	font-weight: 700;
+	margin-bottom: .5rem;
+}
+
+.skillLine {
+	margin-bottom: 1.5rem;
+	padding-left: 0;
+	list-style: none;
+	margin-top: 0;
+}
+
+.skillLine li {
+	margin-bottom: .5rem;
+}
+
+.skillName {
+	font-size: 0.8125rem;
+	color: #434E5E;
+}
+
+.progress {
+	height: 0.6rem;
+	border-radius: 2px;
+	overflow: hidden;
+	font-size: .75rem;
+	background-color: #d7dce2;
+	display: flex;
+}
+
+.bar {
+	background-color: #58677c;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	flex-direction: column;
+	-webkit-box-pack: center;
+	justify-content: center;
+	color: #fff;
+	text-align: center;
+	white-space: nowrap;
+	transition: width 0.6s ease;
+}
+
+.otherSkills {
+	padding-left: 0;
+	list-style: none;
+	margin-top: 0;
+	margin-bottom: 1rem;
+}
+
+.otherSkills li {
+	display: inline-block;
+}
+
+.otherSkills li:not(:last-child) {
+	margin-right: .5rem;
+}
+
+.otherSkills span {
+	padding: 0.35em 0.7em 0.4em 0.7em;
+	color: #434E5E;
+	background-color: #f5f6f8;
+	border-radius: .25rem;
+	display: inline-block;
+	font-size: 75%;
+	font-weight: 700;
+	line-height: 1;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: baseline;
+	transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
 @media (max-width: 768px) {
@@ -209,5 +424,19 @@
 	.inner header {
 		background-color: #434E5E;
 		flex-direction: column;
+	}
+}
+
+@media (min-width: 992px) {
+	.right {
+		-webkit-box-flex: 0;
+		flex: 0 0 25%;
+		max-width: 25%;
+	}
+
+	.left {
+		-webkit-box-flex: 0;
+		flex: 0 0 75%;
+		max-width: 75%;
 	}
 }
