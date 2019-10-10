@@ -84,7 +84,7 @@
 
 .slogan {
 	font-size: 1.5rem;
-	margin-bottom: 1rem;
+	margin-bottom: .75rem;
 }
 
 .secondary {
@@ -148,7 +148,7 @@
 	left: 0;
 	bottom: 0;
 	width: 100%;
-	height: 1.5px;
+	height: 1px;
 	background: #8d9aad;
 }
 

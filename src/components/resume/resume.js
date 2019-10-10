@@ -10,6 +10,23 @@ const ListProjectSkills = ({skills = []}) => {
 		</ul>
 	)
 };
+const ListDeveloperSkills = ({nameList = '', skills = []}) => {
+	const skillsList = skills.map(({id, name, completed}) => <li key={id}>
+		<div className={style.skillName}>{name}</div>
+		<div className={style.progress}>
+			<div className={style.bar} role='progressbar'
+					 style={{width: `${completed}%`}} aria-valuenow='25' aria-valuemin='0' aria-valuemax='100'/>
+		</div>
+	</li>);
+	return (
+		<div className={style.skillItem}>
+			<h4>{nameList}</h4>
+			<ul className={style.skillLine}>
+				{skillsList}
+			</ul>
+		</div>
+	);
+};
 const ListOtherSkills = ({skills = []}) => {
 	const listSkills = skills.map((skill, index) => <li key={index}><span>{skill}</span></li>);
 	return (
@@ -18,25 +35,74 @@ const ListOtherSkills = ({skills = []}) => {
 		</ul>
 	)
 };
+const ListSocialElements = ({social = []}) => {
+	const socialBlock = social.map(({id, icon = '', link = '', text = ''}) => (
+		<a key={id} href={link}><i className={icon}/>{text}</a>));
+	return (
+		<div className={style.secondary}>
+			{socialBlock}
+		</div>
+	);
+};
+const ProjectItem = ({name = '', projectUrl = '', description = '', skills: {full = []}}) => {
+	return (
+		<div className={style.projects}>
+			<h4>{name}</h4>
+			<p>{description}</p>
+			<h4>Используемые технологии:</h4>
+			<ListProjectSkills skills={full}/>
+		</div>
+	);
+};
+const Position = ({id = '', position = '', company = '', timeline: {start, end = 'Настоящее время'}, about = '', informer = '', projects = []}) => {
+	const projectsList = projects
+		.filter(({positionID}) => positionID === id)
+		.map((project) => <ProjectItem key={project.id}{...project}/>);
+	return (
+		<article className={style.timelineItem}>
+			<div className={style.itemHeader}>
+				<div className={style.rowHeader}>
+					<h3>{position} {informer && <span className={style.informer}>({informer})</span>}</h3>
+					<div>{company}</div>
+				</div>
+				<div className={style.positionTime}>{`${start} - ${end}`}</div>
+			</div>
+			<div>
+				<p>{about}</p>
+				{projectsList}
+			</div>
+		</article>
+	);
+};
+const SideBlock = ({nameBlock, items = []}) => {
+	const listItems = items.map(({id, name, informer, organization, date}) => <li key={id}>
+		<div className={style.education}>{name} {informer && <span className={style.informer}>({informer})</span>}</div>
+		{organization && <div className={style.college}>{organization}</div>}
+		{date && <div className={style.date}>{date}</div>}
+	</li>);
+	return (
+		<section>
+			<h2>
+				{nameBlock}
+			</h2>
+			<div className={style.sectionContent}>
+				<ul className={style.listEducation}>
+					{listItems}
+				</ul>
+			</div>
+		</section>
+	);
+};
 
-const Resume = () => {
-
-	const avatar = '/assets/img/avatar.jpg';
-	const social = [
-		{icon: 'fab fa-linkedin-in', link: 'https://www.linkedin.com/in/r0mm4k', text: 'linkedin.com/in/r0mm4k'},
-		{icon: 'fab fa-github', link: 'https://github.com/r0mmm4k', text: 'github.com/r0mmm4k'},
-		{icon: 'fab fa-telegram', link: 'https://t.me/r0mm4k', text: 't.me/r0mm4k'},
-		{icon: 'fa fa-globe', link: 'https://r0mm4k.com', text: 'r0mm4k.com'}
-	];
-	const socialsElements = social.map(({icon = '', link = '', bgc = '', text = ''}, index) => (
-		<a key={index} href={link}><i className={icon}/>{text}</a>));
+const Resume = ({name, image, positions = [], skills: {frontend: frontendSkills, backend: backendSkills, other: otherSkills}, educations = [], searchPosition, languages = [], resume, social: {main, other}, summary, projects = [], courses = []}) => {
+	const listPositions = positions.map((position) => <Position key={position.id} {...position} projects={projects}/>);
 	return (
 		<div className={style.resume}>
 			<div className={style.header}>
 				<div className={style.container}>
 					<h2>Резюме</h2>
 					<div className={style.btn}>
-						<a target='_blank' rel='noopener noreferrer' href='/assets/pdf/cv_roma_makarov.pdf'>
+						<a target='_blank' rel='noopener noreferrer' href={resume}>
 							<i className='fa fa-download  fa-inverse'/>
 							Скачать
 						</a>
@@ -46,25 +112,16 @@ const Resume = () => {
 			<article className={style.wrapper}>
 				<div className={style.inner}>
 					<header>
-						<img src={avatar} alt='avatar'/>
-
+						<img src={image} alt={name}/>
 						<div className={style.title}>
-							<div className={style.primary}>
-								<h1 className={style.name}> Рома Макаров</h1>
+							<div>
+								<h1 className={style.name}>{name}</h1>
 								<div className={style.slogan}>
-									Junior Frontend Developer
+									{searchPosition}
 								</div>
-								<div>
-									<a style={{marginBottom: '.8rem'}} href='mailto:r0mmm4k@gmail.com'><i
-										style={{paddingLeft: '.02rem'}}
-										className='fa fa-envelope'/>r0mmm4k@gmail.com</a>
-									<a href='tel:+375292544449'><i className='fa fa-phone'/>+375 (29) 254-44-49</a>
-								</div>
+								<ListSocialElements social={main}/>
 							</div>
-							<div className={style.secondary}>
-								{socialsElements}
-							</div>
-
+							<ListSocialElements social={other}/>
 						</div>
 					</header>
 					<div className={style.body}>
@@ -73,10 +130,7 @@ const Resume = () => {
 								Обо мне
 							</h2>
 							<div className={style.sectionContent}>
-								Я начинающий веб разработчик. Владею актуальным набором технологий в области Front-End, параллельно
-								изучаю Back-End. Готов начать свой трудовой путь в сфере веб разработки, где смогу получить и
-								использовать больше знаний и практического опыта. Имею большой интерес и желание достичь
-								профессионального уровня.
+								{summary}
 							</div>
 						</section>
 						<div className={style.row}>
@@ -87,72 +141,7 @@ const Resume = () => {
 									</h2>
 									<div className={style.sectionContent}>
 										<div className={style.timeline}>
-											<article className={style.timelineItem}>
-												<div className={style.itemHeader}>
-													<div className={style.rowHeader}>
-														<h3>Веб-разработчик <span className={style.informer}>(обучение)</span></h3>
-														<div>Фриланс</div>
-													</div>
-													<div className={style.positionTime}>2018 - Настоящее время</div>
-												</div>
-												<div className={style.itemDescription}>
-													<p>
-														Ежедневно прокачиваю старые навыки и изучаю новые, обучаясь новой профессии. Разрабатыю
-														интересные учебные и личных проекты:
-													</p>
-													<div className={style.projects}>
-														<h4>ToDo List</h4>
-														<p>
-															Веб-приложение для хранения списка заданий.
-														</p>
-														<h4>Используемые технологии:</h4>
-														<ListProjectSkills
-															skills={['HTML/CSS', 'JS (ES6+)', 'React', 'Redux', 'Axios', 'Thunk', 'Bootstrap',
-																'Webpack', 'NPM', 'git']}/>
-													</div>
-													<div className={style.projects}>
-														<h4>GitHub Finder</h4>
-														<p>
-															Веб-приложение для поиска разработчиков и их репозиториев.
-														</p>
-														<h4>Используемые технологии:</h4>
-														<ListProjectSkills
-															skills={['HTML/CSS', 'JS (ES6+)', 'React', 'Context', 'Axios', 'PropTypes', 'Bootstrap',
-																'Webpack', 'Hooks', 'React Router', 'NPM', 'git']}/>
-													</div>
-													<div className={style.projects}>
-														<h4>Portfolio</h4>
-														<p>
-															Порфтолию для веб-разработчика с примерами проектов, блогом, формой и резюме.
-														</p>
-														<h4>Используемые технологии:</h4>
-														<ListProjectSkills
-															skills={['HTML/CSS (modules)', 'JS (ES6+)', 'React', 'Context', 'Webpack', 'Hooks',
-																'React Router', 'NPM', 'git']}/>
-													</div>
-													<div className={style.projects}>
-														<h4>Confusion</h4>
-														<p>
-															Веб-сайт для ресторана.
-														</p>
-														<h4>Используемые технологии:</h4>
-														<ListProjectSkills
-															skills={['HTML/CSS (modules)', 'JS (ES6+)', 'React', 'Redux', 'Fetch', 'Redux Form',
-																'Webpack', 'Hooks', 'Bootstrap', 'Thunk', 'React Animation', 'React Transition',
-																'React Router', 'NPM', 'git']}/>
-													</div>
-													<div className={style.projects}>
-														<h4>StarDB</h4>
-														<p>
-															Веб-приложение для поиска героев, планет, кораблей фильма Star Wars.
-														</p>
-														<h4>Используемые технологии:</h4>
-														<ListProjectSkills
-															skills={['HTML/CSS', 'JS (ES6+)', 'React', 'Redux', 'Axios',
-																'Webpack', 'Hooks', 'Bootstrap', 'Thunk', 'React Router', 'NPM', 'git']}/>
-													</div>
-												</div>
-											</article>
+											{listPositions}
 										</div>
 									</div>
 								</section>
@@ -163,139 +152,17 @@ const Resume = () => {
 										НАВЫКИ
 									</h2>
 									<div className={style.sectionContent}>
-										<div className={style.skillItem}>
-											<h4>Frontend</h4>
-											<ul className={style.skillLine}>
-												<li>
-													<div className={style.skillName}>React/Redux</div>
-													<div className={style.progress}>
-														<div className={style.bar} role='progressbar'
-																 style={{width: '95%'}} aria-valuenow='25' aria-valuemin='0' aria-valuemax='100'/>
-													</div>
-												</li>
-												<li>
-													<div className={style.skillName}>JavaScript (ES6+AJAX)</div>
-													<div className={style.progress}>
-														<div className={style.bar} role='progressbar'
-																 style={{width: '91%'}} aria-valuenow='25' aria-valuemin='0' aria-valuemax='100'/>
-													</div>
-												</li>
-												<li>
-													<div className={style.skillName}>Bootstrap</div>
-													<div className={style.progress}>
-														<div className={style.bar} role='progressbar'
-																 style={{width: '85%'}} aria-valuenow='25' aria-valuemin='0' aria-valuemax='100'/>
-													</div>
-												</li>
-												<li>
-													<div className={style.skillName}>yarn/npm (+scripts)</div>
-													<div className={style.progress}>
-														<div className={style.bar} role='progressbar'
-																 style={{width: '83%'}} aria-valuenow='25' aria-valuemin='0' aria-valuemax='100'/>
-													</div>
-												</li>
-												<li>
-													<div className={style.skillName}>HTML/CSS (S.C. + Module)</div>
-													<div className={style.progress}>
-														<div className={style.bar} role='progressbar'
-																 style={{width: '91%'}} aria-valuenow='25' aria-valuemin='0' aria-valuemax='100'/>
-													</div>
-												</li>
-											</ul>
-										</div>
-										<div className={style.skillItem}>
-											<h4>Backend</h4>
-											<ul className={style.skillLine}>
-												<li>
-													<div className={style.skillName}>Node.js</div>
-													<div className={style.progress}>
-														<div className={style.bar} role='progressbar'
-																 style={{width: '65%'}} aria-valuenow='25' aria-valuemin='0' aria-valuemax='100'/>
-													</div>
-												</li>
-												<li>
-													<div className={style.skillName}>Express/Hapi/Fastify</div>
-													<div className={style.progress}>
-														<div className={style.bar} role='progressbar'
-																 style={{width: '55%'}} aria-valuenow='25' aria-valuemin='0' aria-valuemax='100'/>
-													</div>
-												</li>
-												<li>
-													<div className={style.skillName}>MongoDB</div>
-													<div className={style.progress}>
-														<div className={style.bar} role='progressbar'
-																 style={{width: '80%'}} aria-valuenow='25' aria-valuemin='0' aria-valuemax='100'/>
-													</div>
-												</li>
-												<li>
-													<div className={style.skillName}>Swagger</div>
-													<div className={style.progress}>
-														<div className={style.bar} role='progressbar'
-																 style={{width: '45%'}} aria-valuenow='25' aria-valuemin='0' aria-valuemax='100'/>
-													</div>
-												</li>
-											</ul>
-										</div>
+										<ListDeveloperSkills nameList={frontendSkills.name} skills={frontendSkills.items}/>
+										<ListDeveloperSkills nameList={backendSkills.name} skills={backendSkills.items}/>
 										<div className={style.skillItem}>
 											<h4>Other</h4>
-											<ListOtherSkills skills={['Figma', 'Git', 'WebStorm', 'OpenCart', 'Sketch', 'REST', 'WordPress',
-												'HTTP/HTTPS']}/>
+											<ListOtherSkills skills={otherSkills.items}/>
 										</div>
 									</div>
 								</section>
-								<section>
-									<h2>
-										ОБРАЗОВАНИЕ
-									</h2>
-									<div className={style.sectionContent}>
-										<ul className={style.listEducation}>
-											<li>
-												<div className={style.education}>Building Engineer</div>
-												<div className={style.college}>Belarusian National Technical University</div>
-												<div className={style.date}>2015 - 2021</div>
-											</li>
-										</ul>
-									</div>
-								</section>
-								<section>
-									<h2>
-										КУРСЫ
-									</h2>
-									<div className={style.sectionContent}>
-										<ul className={style.listEducation}>
-											<li>
-												<div className={style.education}>Front-End Web Development with React</div>
-												<div className={style.college}>Coursera</div>
-												<div className={style.date}>Oct. 2019</div>
-											</li>
-											<li>
-												<div className={style.education}>Web-Developer: React Redux Node.js</div>
-												<div className={style.college}>IT-INCUBATOR</div>
-												<div className={style.date}>Sep. 2019</div>
-											</li>
-										</ul>
-									</div>
-								</section>
-								<section>
-									<h2>
-										ЯЗЫКИ
-									</h2>
-									<div className={style.sectionContent}>
-										<ul className={style.listEducation}>
-											<li>
-												<div className={style.education}>English <span
-													className={style.informer}>(A2: Elementary)</span></div>
-											</li>
-											<li>
-												<div className={style.education}>Русский <span className={style.informer}>(Родной)</span></div>
-											</li>
-											<li>
-												<div className={style.education}>Белорусский <span className={style.informer}>(Родной)</span>
-												</div>
-											</li>
-										</ul>
-									</div>
-								</section>
+								<SideBlock nameBlock='ОБРАЗОВАНИЕ' items={educations}/>
+								<SideBlock nameBlock='КУРСЫ' items={courses}/>
+								<SideBlock nameBlock='ЯЗЫКИ' items={languages}/>
 							</div>
 						</div>
 					</div>

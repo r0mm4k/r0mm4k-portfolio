@@ -6,11 +6,11 @@ import Skills from './skills/skills';
 import ProjectsBar from './projects-bar/projects-bar';
 import BottomBar from '../bottom-bar/bottom-bar';
 
-const About = ({projects}) => {
+const About = ({projects, name, skills}) => {
 	return (
 		<div className={style.about}>
-			<TopBar/>
-			<Skills/>
+			<TopBar name={name}/>
+			<Skills skills={skills}/>
 			<ProjectsBar projects={projects}/>
 			<BottomBar/>
 		</div>

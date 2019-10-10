@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 import style from './project-card.module.css';
 
-const ProjectCard = ({project: {img = '', logo = '', title = '', link = '', description: {small = ''}, development = '', skills = []}}) => {
+const ProjectCard = ({project: {image = '', name = '', projectUrl = '', description = '', development = '', skills: {main: skills = ''}}}) => {
 
 	const [overlay, setOverlay] = useState(true);
 	const [overlayDescription, setOverlayDescription] = useState(false);
@@ -18,29 +18,29 @@ const ProjectCard = ({project: {img = '', logo = '', title = '', link = '', desc
 						 setOverlayDescription(false);
 						 setOverlay(true);
 					 }}>
-				<img src={img} alt='logo'/>
+				<img src={image} alt='logo'/>
 				<div className={overStyle} onMouseOver={() => {
 					setOverlay(false);
 					setOverlayDescription(true);
 				}}>
 					<div className={style.logo}>
-						<span>{logo}</span>
+						<span>{name}</span>
 					</div>
 				</div>
-				<Link to={`/${link}`}>
+				<Link to={`/${projectUrl}`}>
 					<div className={overDescriptionStyle}>
 						<h5>
-							{title}
+							{name}
 						</h5>
 						<p>
-							{small}
+							{description}
 						</p>
 					</div>
 				</Link>
 			</div>
 			<div className={style.development}>
 				<h4>
-					<Link to={`/${link}`}>
+					<Link to={`/${projectUrl}`}>
 						{development}
 					</Link>
 				</h4>

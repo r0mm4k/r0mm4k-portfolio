@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 import style from './contacts.module.css';
 
-const Contacts = () => {
+const Contacts = ({image, social}) => {
 
 	const [state, setState] = useState({name: '', email: '', message: ''});
 	const {name, email, message} = state;
@@ -31,16 +31,8 @@ const Contacts = () => {
 			.join("&");
 	};
 
-	const avatar = '/assets/img/avatar.jpg';
-	const social = [
-		{icon: 'fab fa-linkedin-in fa-inverse fa-lg', bgc: style.linkedin, link: 'https://www.linkedin.com/in/r0mm4k/'},
-		{icon: 'fab fa-github fa-inverse fa-lg', bgc: style.github, link: 'https://github.com/r0mmm4k'},
-		{icon: 'fab fa-vk fa-inverse fa-lg', bgc: style.vk, link: 'https://vk.com/r0mm4k'},
-		{icon: 'fab fa-telegram fa-inverse fa-lg', bgc: style.telegram, link: 'https://t.me/r0mm4k'},
-		{icon: 'fab fa-instagram fa-inverse fa-lg', bgc: style.instagram, link: 'https://instagram.com/r0mm4k'}
-	];
-	const socialsElements = social.map(({icon = '', link = '', bgc = ''}, index) => (
-		<a key={index} className={bgc} href={link}><i className={icon}/></a>));
+	const socialsElements = social.map(({id, icon = '', link = '', bgc = ''}) => (
+		<a key={id} className={bgc} href={link}><i className={icon}/></a>));
 
 	return (
 		<div className={style.contacts}>
@@ -51,7 +43,7 @@ const Contacts = () => {
 			</div>
 			<section className={style.section}>
 				<div className={style.avatar}>
-					<img src={avatar} alt='avatar'/>
+					<img src={image} alt='avatar'/>
 				</div>
 				<div className={style.card}>
 					<p>

@@ -29,7 +29,7 @@ const Projects = ({projects = []}) => {
 			<div className={style.header}>
 				<div className={style.container}>
 					<h2>Проекты</h2>
-					<p>Познакомься с моими работами и изучи мои возможностями</p>
+					<p>Познакомься с моими работами и изучи мои возможности</p>
 				</div>
 			</div>
 			<section className={style.section}>

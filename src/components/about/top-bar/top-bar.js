@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 import style from './top-bar.module.css';
 
-const TopBar = () => {
+const TopBar = ({name}) => {
 
 	const avatar = '/assets/img/avatar.jpg';
 
@@ -18,7 +18,7 @@ const TopBar = () => {
 						Привет, меня зовут
 					</div>
 					<h1 className={style.name}>
-						Рома Макаров
+						{name}
 					</h1>
 					<div className={style.description}>
 						Я начинающий веб разработчик. Владею актуальным набором технологий в области Front-End, параллельно изучаю
