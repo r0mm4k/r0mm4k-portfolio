@@ -424,7 +424,7 @@
 		text-align: center;
 	}
 
-	.inner a {
+	.inner .title a {
 		margin-bottom: 0;
 		margin-top: 1rem;
 		margin-left: calc(50vw - 3rem - 4rem);
