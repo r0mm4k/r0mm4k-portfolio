@@ -19,7 +19,7 @@ const ProjectCard = ({project: {image = '', name = '', projectUrl = '', descript
 						 setOverlay(true);
 					 }}>
 				<img src={image} alt='logo'/>
-				<div className={overStyle} onMouseOver={() => {
+				<div className={overStyle} onMouseEnter={() => {
 					setOverlay(false);
 					setOverlayDescription(true);
 				}}>
