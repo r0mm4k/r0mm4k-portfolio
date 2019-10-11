@@ -256,6 +256,15 @@
 	margin-bottom: .4rem;
 }
 
+.body a {
+	color: #58677c;
+	font-size: 1rem;
+}
+
+.body a:hover {
+	color: #58677c;
+}
+
 .projectSkill {
 	padding-left: 0;
 	list-style: none;

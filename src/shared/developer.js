@@ -113,7 +113,8 @@ export const DEVELOPER = {
 			id: 0,
 			name: 'Building Engineer',
 			organization: 'Belarusian National Technical University',
-			date: '2015 - 2021'
+			date: '2015 - 2021',
+			link: 'https://en.bntu.by/civil-engineering-faculty'
 		}
 	],
 	courses: [
@@ -121,13 +122,15 @@ export const DEVELOPER = {
 			id: 0,
 			name: 'Front-End Web Development with React',
 			organization: 'Coursera',
-			date: 'Oct. 2019'
+			date: 'Oct. 2019',
+			link: 'https://www.coursera.org/account/accomplishments/verify/ZQH7NTDPA3VD'
 		},
 		{
 			id: 1,
 			name: 'Web-Developer: React Redux Node.js',
 			organization: 'IT-INCUBATOR',
-			date: 'Sep. 2019'
+			date: 'Sep. 2019',
+			link: 'https://it-incubator.by'
 		}
 	],
 	languages: [
