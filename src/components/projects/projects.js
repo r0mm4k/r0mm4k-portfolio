@@ -19,7 +19,7 @@ const Projects = ({projects = []}) => {
 
 	const filter = (arrProjects, element) => {
 		if (element !== 'All') {
-			return arrProjects.filter(({skills}) => skills.indexOf(element) > -1);
+			return arrProjects.filter(({skills: {main}}) => main.indexOf(element) > -1);
 		}
 		return arrProjects;
 	};
