@@ -36,9 +36,12 @@ export const PROJECTS = [
 		image: '/assets/img/projects/star-db.png',
 		development: 'Веб-приложение',
 		projectUrl: 'stardb',
-		liveUrl: 'https://r0mm4k-starwars.netlify.com',
-		codeUrl: 'https://github.com/r0mmm4k/star-wars',
-		skills: {main: ['React', 'Redux', 'Bootstrap', 'HTML/CSS'], full: []},
+		liveurl: 'https://r0mm4k-starwars.netlify.com',
+		codeurl: 'https://github.com/r0mmm4k/star-wars',
+		skills: {
+			main: ['React', 'Redux', 'Bootstrap', 'HTML/CSS'],
+			full: ['HTML/CSS', 'JS (ES6+)', 'React', 'Redux', 'Axios', 'Bootstrap', 'Webpack', 'Hooks',	'React Router', 'PropTypes', 'NPM', 'git']
+		},
 		description: 'Веб-приложение для поиска героев, планет, кораблей фильма Star Wars.'
 	},
 	{
