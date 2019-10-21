@@ -77,7 +77,7 @@ const Position = ({id = '', position = '', company = '', timeline: {start, end =
 };
 const SideBlock = ({nameBlock, items = []}) => {
 	const isLink = (link, text) => <a target='_blank' rel='noopener noreferrer' href={link}>{text}</a>;
-	const listItems = items.map(({id, name, informer, organization, date, link}) => <li key={id}>
+	const listItems = [...items.reverse()].map(({id, name, informer, organization, date, link}) => <li key={id}>
 		<div className={style.education}>{link ? isLink(link,name) : name} {informer && <span className={style.informer}>({informer})</span>}</div>
 		{organization && <div className={style.college}>{organization}</div>}
 		{date && <div className={style.date}>{date}</div>}

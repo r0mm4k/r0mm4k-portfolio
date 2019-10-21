@@ -52,27 +52,27 @@ export const DEVELOPER = {
 				{
 					id: 0,
 					name: 'React/Redux',
-					completed: 95,
+					completed: 85,
 				},
 				{
 					id: 1,
 					name: 'JavaScript (ES6+AJAX)',
-					completed: 91,
+					completed: 80,
 				},
 				{
 					id: 2,
 					name: 'Bootstrap',
-					completed: 85,
+					completed: 70,
 				},
 				{
 					id: 3,
 					name: 'yarn/npm (+scripts)',
-					completed: 83,
+					completed: 80,
 				},
 				{
 					id: 4,
 					name: 'HTML/CSS (S.C. + Module)',
-					completed: 91,
+					completed: 85,
 				},
 			]
 		},
@@ -83,22 +83,22 @@ export const DEVELOPER = {
 				{
 					id: 0,
 					name: 'Node.js',
-					completed: 65,
+					completed: 55,
 				},
 				{
 					id: 1,
 					name: 'Express/Hapi/Fastify',
-					completed: 55,
+					completed: 50,
 				},
 				{
 					id: 2,
 					name: 'MongoDB',
-					completed: 80,
+					completed: 50,
 				},
 				{
 					id: 3,
 					name: 'Swagger',
-					completed: 45,
+					completed: 40,
 				}
 			]
 		},
@@ -120,24 +120,31 @@ export const DEVELOPER = {
 	courses: [
 		{
 			id: 0,
+			name: 'Web-Developer: React Redux Node.js',
+			organization: 'IT-INCUBATOR',
+			date: 'Sep. 2019',
+			link: 'https://it-incubator.by'
+		},
+		{
+			id: 1,
 			name: 'Front-End Web Development with React',
 			organization: 'Coursera',
 			date: 'Oct. 2019',
 			link: 'https://www.coursera.org/account/accomplishments/verify/ZQH7NTDPA3VD'
 		},
 		{
-			id: 1,
-			name: 'Web-Developer: React Redux Node.js',
-			organization: 'IT-INCUBATOR',
-			date: 'Sep. 2019',
-			link: 'https://it-incubator.by'
-		}
+			id: 2,
+			name: 'React + Redux - Профессиональная Разработка',
+			organization: 'Udemy',
+			date: 'Oct. 2019',
+			link: 'https://www.udemy.com/certificate/UC-3IV43S39'
+		},
 	],
 	languages: [
 		{
 			id: 0,
-			name: 'English',
-			informer: 'A2: Elementary'
+			name: 'Белорусский',
+			informer: 'Родной'
 		},
 		{
 			id: 1,
@@ -146,8 +153,8 @@ export const DEVELOPER = {
 		},
 		{
 			id: 2,
-			name: 'Белорусский',
-			informer: 'Родной'
+			name: 'English',
+			informer: 'A2: Elementary'
 		}
 	],
 	summary: 'Я начинающий веб разработчик. Владею актуальным набором технологий в области Front-End, параллельно изучаю Back-End. Готов начать свой трудовой путь в сфере веб разработки, где смогу получить и использовать больше знаний и практического опыта. Имею большой интерес и желание достичь профессионального уровня.'
